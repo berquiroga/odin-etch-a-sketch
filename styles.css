@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 5%;
+
+}
+
+.square {
+    width: 6.25%;
+    aspect-ratio: 1 / 1;
+    background-color: aqua;
+}

@@ -9,10 +9,3 @@ body {
     padding: 5%;
 
 }
-
-.square {
-    width: 6.25%;
-    box-sizing: border-box;
-    aspect-ratio: 1 / 1;
-    background-color: aqua;
-}

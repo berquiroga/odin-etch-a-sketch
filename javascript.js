@@ -26,13 +26,20 @@ function createGrid(side) {
         let width = 100 / side;
         square.style.width = `${width}%`;
         square.style.boxSizing = "border-box";
-        // Randomize square color in RGB (0-255 for each)
-        let r = Math.floor(Math.random() * 256);
-        let g = Math.floor(Math.random() * 256);
-        let b = Math.floor(Math.random() * 256);
-        // Add event listeners for hovering and change color leaving a trail
+        let opacity = 0.1;
+        let increaseOpacity = 0.1;
+        square.style.opacity = `${opacity}`;
+        // Add event listeners for hovering and change color (incresing darkness) leaving a trail
         square.addEventListener("mouseover", function (e) {
-            e.target.style.background = `rgb(${r}, ${g}, ${b})`;
+            let targetOpacity = +e.target.style.opacity;
+            if (targetOpacity < 1) {
+                e.target.style.opacity = `${targetOpacity + increaseOpacity}`;
+                // Randomize square color in RGB (0-255 for each)
+                let r = Math.floor(Math.random() * 256);
+                let g = Math.floor(Math.random() * 256);
+                let b = Math.floor(Math.random() * 256);
+                e.target.style.background = `rgb(${r}, ${g}, ${b})`;
+            };
         });
         grid.appendChild(square);
     };
